@@ -1,5 +1,3 @@
-import styles from "./styles";
-
 const products = [
   {
     name: "Dairy-free Ice Cream",
@@ -16,18 +14,4 @@ const products = [
   },
 ];
 
-function ProductsList() {
-  return products.map((product) => (
-    <>
-      <div style={styles.list}>
-        <div style={styles.product}>
-          <h3>{product.name}</h3>
-          <img src={product.image} style={styles.productImages} />
-          <h4>{product.price} KD</h4>
-        </div>
-      </div>
-    </>
-  ));
-}
-
-export default ProductsList;
+export default products;
