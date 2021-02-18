@@ -1,10 +1,13 @@
 import ProductItem from "./ProductItem";
 import products from "../products";
+import { ListWrapper } from "../styles";
 
 const ProductList = () => {
-  return products.map((product) => (
-    <ProductItem product={product} key={product.id} />
+  const productList = products.map((x) => (
+    <ProductItem product={x} key={x.id} />
   ));
+
+  return <ListWrapper>{productList}</ListWrapper>;
 };
 
 export default ProductList;
