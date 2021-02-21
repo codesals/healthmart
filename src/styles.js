@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${(props) => props.theme.mainColor};
     background-color: ${(props) => props.theme.backgroundColor};
-    text-align: center;
+    /* text-align: center; */
   }
 `;
 
@@ -46,6 +46,16 @@ const ProductWrapper = styled.div`
       color: ${(props) => props.theme.green};
     }
   }
+`;
+
+export const ThemeButton = styled.button`
+  font-size: 1em;
+  margin: 1.25em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.backgroundColor};
+  /* justify-content: flex-start; */
 `;
 
 export {
