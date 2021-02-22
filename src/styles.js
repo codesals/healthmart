@@ -1,10 +1,12 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { Link } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${(props) => props.theme.mainColor};
     background-color: ${(props) => props.theme.backgroundColor};
     /* text-align: center; */
+    /* justify-content: center; */
   }
 `;
 
@@ -51,11 +53,11 @@ const ProductWrapper = styled.div`
 export const ThemeButton = styled.button`
   font-size: 1em;
   margin: 1.25em;
-  padding: 0.25em 1em;
+  /* padding: 0.25em 1em; */
   border-radius: 3px;
   background-color: ${(props) => props.theme.mainColor};
   color: ${(props) => props.theme.backgroundColor};
-  /* justify-content: flex-start; */
+  float: right;
 `;
 
 export const SearchBarStyled = styled.input`
@@ -63,6 +65,15 @@ export const SearchBarStyled = styled.input`
   margin: 1rem auto;
   display: block;
   width: 40%;
+`;
+
+export const Logo = styled(Link)`
+  padding: 0.75em;
+  /* margin: 2%; */
+
+  img {
+    width: 4rem;
+  }
 `;
 
 export {
