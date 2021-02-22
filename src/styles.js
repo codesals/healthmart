@@ -58,6 +58,13 @@ export const ThemeButton = styled.button`
   /* justify-content: flex-start; */
 `;
 
+export const SearchBarStyled = styled.input`
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 40%;
+`;
+
 export {
   GlobalStyle,
   Description,
