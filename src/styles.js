@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -15,7 +15,7 @@ const Title = styled.h1`
   color: #672422;
 `;
 
-const Description = styled.h3`
+const Description = styled.h4`
   text-align: center;
 `;
 
@@ -51,13 +51,13 @@ const ProductWrapper = styled.div`
 `;
 
 export const ThemeButton = styled.button`
-  font-size: 1em;
-  margin: 1.25em;
+  /* font-size: 1em; */
+  /* margin: 1.25em; */
   /* padding: 0.25em 1em; */
   border-radius: 3px;
   background-color: ${(props) => props.theme.mainColor};
   color: ${(props) => props.theme.backgroundColor};
-  float: right;
+  /* float: right; */
 `;
 
 export const SearchBarStyled = styled.input`
@@ -73,6 +73,15 @@ export const Logo = styled(Link)`
 
   img {
     width: 4rem;
+  }
+`;
+
+export const NavItem = styled(NavLink)`
+  padding: 0.25em 1em;
+  color: ${(props) => props.theme.mainColor};
+
+  &.active {
+    color: ${(props) => props.theme.otherColor};
   }
 `;
 

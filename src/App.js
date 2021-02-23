@@ -1,26 +1,26 @@
 // import { getSuggestedQuery } from "@testing-library/react";
 import Home from "./Components/Home";
 import ProductList from "./Components/ProductList";
-import { GlobalStyle, ThemeButton, Logo } from "./styles";
+import NavBar from "./Components/NavBar";
+import { GlobalStyle } from "./styles";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import { Redirect, Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
-import logo from "./health-mart-logo.png";
 
 const theme = {
   light: {
     mainColor: "darkred", // main font color
     backgroundColor: "white", // main background color
-    prices: "grey",
-    buttonTitle: "Dark Theme",
+    otherColor: "grey",
+    buttonTitle: "Dark Mode",
   },
 
   dark: {
     mainColor: "#fefafb", // main font color
     backgroundColor: "#242424", // main background color
-    prices: "grey",
-    buttonTitle: "Light Theme",
+    otherColor: "grey",
+    buttonTitle: "Light Mode",
   },
 };
 
@@ -36,16 +36,10 @@ function App() {
     <>
       <ThemeProvider theme={currentTheme}>
         <GlobalStyle />
-        <ThemeButton onClick={toggleCurrentTheme}>
-          {currentTheme.buttonTitle}
-        </ThemeButton>
-        <Logo to="/">
-          <img src={logo} alt="healthmart logo" width="50" />
-        </Logo>
-
-        <Link to="/products" style={{ margin: "1.25em", float: "right" }}>
-          Products
-        </Link>
+        <NavBar
+          currentTheme={currentTheme}
+          toggleCurrentTheme={toggleCurrentTheme}
+        />
         <Switch>
           <Route path={["/", "/home"]} exact>
             <Home />

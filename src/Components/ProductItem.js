@@ -5,7 +5,7 @@ const ProductItem = (props) => {
 
   return (
     <ProductWrapper>
-      <h3>{product.name}</h3>
+      <h4 style={{ textAlign: "center" }}>{product.name}</h4>
       <img src={product.image} alt={product.alt} />
       <p className="product-price">{product.price} KD</p>
     </ProductWrapper>
