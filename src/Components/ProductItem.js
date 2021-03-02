@@ -1,5 +1,5 @@
 import { ProductWrapper } from "../styles";
-//import productStore from "../stores/productStore";
+import DeleteButton from "./buttons/DeleteButton";
 
 const ProductItem = (props) => {
   const product = props.product;
@@ -13,6 +13,8 @@ const ProductItem = (props) => {
         onClick={() => props.setProduct(product)}
       />
       <p className="product-price">{product.price} KD</p>
+      {/* <DeleteButton onClick={() => productStore.deleteProduct(product.id)}> */}
+      <DeleteButton productId={product.id}>Delete</DeleteButton>
     </ProductWrapper>
   );
 };

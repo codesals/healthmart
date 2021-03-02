@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Redirect, Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
 import ProductDetail from "./Components/ProductDetail";
-import products from "./products";
+// import products from "./products";
 
 const theme = {
   light: {
@@ -16,6 +16,7 @@ const theme = {
     backgroundColor: "white", // main background color
     otherColor: "grey",
     buttonTitle: "Dark Mode",
+    red: "#ff3232",
   },
 
   dark: {
@@ -23,6 +24,7 @@ const theme = {
     backgroundColor: "#242424", // main background color
     otherColor: "grey",
     buttonTitle: "Light Mode",
+    red: "#ff3232",
   },
 };
 

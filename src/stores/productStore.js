@@ -13,8 +13,8 @@ class ProductStore {
     makeAutoObservable(this);
   }
 
-  createProduct = (newProduct) => {
-    //
+  deleteProduct = (productId) => {
+    this.products = this.products.filter((product) => product.id !== productId);
   };
 }
 

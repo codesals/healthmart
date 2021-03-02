@@ -92,6 +92,10 @@ export const Logo = styled(Link)`
   }
 `;
 
+export const DeleteButtonStyled = styled.p`
+  color: ${(props) => props.theme.red};
+`;
+
 export const NavItem = styled(NavLink)`
   padding: 0.25em 1em;
   color: ${(props) => props.theme.mainColor};
