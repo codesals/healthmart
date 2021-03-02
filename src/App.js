@@ -7,6 +7,8 @@ import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import { Redirect, Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
+import ProductDetail from "./Components/ProductDetail";
+import products from "./products";
 
 const theme = {
   light: {
@@ -25,8 +27,14 @@ const theme = {
 };
 
 function App() {
+  // const product = products[0];
   const [currentTheme, setCurrentTheme] = useState(theme.light);
-
+  const [product, setProduct] = useState(null);
+  const setView = () => {
+    if (product)
+      return <ProductDetail product={product} setProduct={setProduct} />;
+    return <ProductList setProduct={setProduct} />;
+  };
   const toggleCurrentTheme = () => {
     if (currentTheme === theme.light) setCurrentTheme(theme.dark);
     else setCurrentTheme(theme.light);
@@ -45,7 +53,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/products" exact>
-            <ProductList />
+            {setView()}
           </Route>
           <Route path={["/404", "not-found"]} exact>
             <div style={{ textAlign: "center" }}>

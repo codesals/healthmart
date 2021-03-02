@@ -1,13 +1,20 @@
 import ProductItem from "./ProductItem";
-import products from "../products";
+// import products from "../products";
 import { ListWrapper } from "../styles";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 
-const ProductList = () => {
+import productStore from "../stores/productStore";
+import { observer } from "mobx-react";
+
+const ProductList = ({ setProduct }) => {
   const [query, setQuery] = useState("");
 
-  const filteredProducts = products.filter((item) =>
+  // const filteredProducts = productStore.products.filter((item) =>
+  //   item.name.toLowerCase().includes(query)
+  // );
+
+  const filteredProducts = productStore.products.filter((item) =>
     item.name.toLowerCase().includes(query)
   );
 
@@ -16,11 +23,12 @@ const ProductList = () => {
       <SearchBar findItems={setQuery} />
       <ListWrapper>
         {filteredProducts.map((item) => (
-          <ProductItem product={item} key={item.id} />
+          <ProductItem product={item} key={item.id} setProduct={setProduct} />
         ))}
       </ListWrapper>
     </>
   );
 };
 
-export default ProductList;
+export default observer(ProductList);
+// export default ProductList;
